@@ -123,6 +123,7 @@ static void * AFNetworkRequestStartDate = &AFNetworkRequestStartDate;
 
     switch (self.level) {
         case AFLoggerLevelDebug:
+        case AFLoggerLevelDetail:
             NSLog(@"%@ '%@': %@ %@", [request HTTPMethod], [[request URL] absoluteString], [request allHTTPHeaderFields], body);
             break;
         case AFLoggerLevelInfo:
@@ -176,6 +177,9 @@ static void * AFNetworkRequestStartDate = &AFNetworkRequestStartDate;
         switch (self.level) {
             case AFLoggerLevelDebug:
                 NSLog(@"%ld '%@' [%.04f s]: %@ %@", (long)responseStatusCode, [[response URL] absoluteString], elapsedTime, responseHeaderFields, responseObject);
+                break;
+            case AFLoggerLevelDetail:
+                NSLog(@"%ld '%@' [%.04f s]: %@", (long)responseStatusCode, [[response URL] absoluteString], elapsedTime, responseHeaderFields);
                 break;
             case AFLoggerLevelInfo:
                 NSLog(@"%ld '%@' [%.04f s]", (long)responseStatusCode, [[response URL] absoluteString], elapsedTime);

@@ -25,6 +25,7 @@
 typedef NS_ENUM(NSUInteger, AFHTTPRequestLoggerLevel) {
   AFLoggerLevelOff,
   AFLoggerLevelDebug,
+  AFLoggerLevelDetail,
   AFLoggerLevelInfo,
   AFLoggerLevelWarn,
   AFLoggerLevelError,
